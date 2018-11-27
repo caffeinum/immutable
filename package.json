@@ -1,7 +1,7 @@
 {
   "name": "immutableth",
   "version": "1.0.1",
-  "description": "Immutable storage for your data",
+  "description": "Immutable Storage – Save to blockchain like to localStorage",
   "main": "src/index.mjs",
   "scripts": {
     "test": "node --experimental-modules test.mjs"
