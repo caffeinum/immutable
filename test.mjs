@@ -1,4 +1,4 @@
-import ImmutablETH from './src'
+import ImmutablETH from 'immutableth'
 
 const storage = ImmutablETH()
 
