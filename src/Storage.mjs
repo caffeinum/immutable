@@ -4,16 +4,20 @@ export default class Storage {
     this.account = account
   }
 
-  setItem(key, obj) {
-    const data = JSON.stringify(obj)
+  async setItem(key, obj) {
+    const data = JSON.stringify(obj) || ""
+
+    const gas = await this.contract.methods.setItem(key, data).estimateGas()
+
     return this.contract.methods.setItem(key, data).send({
       from: this.account.address,
+      gas: 3e6,
     })
   }
 
-  getItem(key) {
+  async getItem(key) {
     const data = this.contract.methods.getItem(key).call()
 
-    return data.then(JSON.parse)
+    return data.then(JSON.parse).catch(() => ({}))
   }
 }

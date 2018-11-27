@@ -1,9 +1,9 @@
 import Web3 from 'web3'
-import { NETWORK } from './config'
+import { NETWORK, INFURA_KEY } from './config'
 
 const WEB3_PROVIDERS = {
-  mainnet: new Web3.providers.HttpProvider(`https://mainnet.infura.io/JCnK5ifEPH9qcQkX0Ahl`),
-  testnet: new Web3.providers.HttpProvider(`https://rinkeby.infura.io/JCnK5ifEPH9qcQkX0Ahl`),
+  mainnet: new Web3.providers.HttpProvider(`https://mainnet.infura.io/${INFURA_KEY}`),
+  testnet: new Web3.providers.HttpProvider(`https://rinkeby.infura.io/${INFURA_KEY}`),
   localnet: new Web3.providers.HttpProvider(`http://localhost:7545`),
 }
 
